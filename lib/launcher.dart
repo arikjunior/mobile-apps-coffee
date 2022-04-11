@@ -28,6 +28,7 @@ class _LauncherPageState extends State<LauncherPage> {
     return new Timer(duration, () {
       Navigator.of(context).pushReplacement(
           new MaterialPageRoute(builder: (_) => new users.LandingPage()));
+      // new MaterialPageRoute(builder: (_) => new auth.Register()));
     });
   }
 
