@@ -28,63 +28,68 @@ class _DepanPageState extends State<DepanPage> {
     return Scaffold(
         body: Column(
       children: <Widget>[
-        Column(
+        new Expanded(
+            child: ListView(
           children: [
             Column(
-              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Text(
-                    "Our Best Offers",
-                    style: TextStyle(fontWeight: FontWeight.w700),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        "Our Best Offers",
+                        style: TextStyle(fontWeight: FontWeight.w700),
+                      ),
+                    )
+                  ],
+                ),
+                CarouselSlider(
+                  options: CarouselOptions(
+                    autoPlay: false,
+                    aspectRatio: 1.6,
+                    enlargeCenterPage: true,
                   ),
-                )
+                  items: imgList
+                      .map(
+                        (item) => Container(
+                          margin: EdgeInsets.all(5.0),
+                          child: Card(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Container(
+                                    width: size.width,
+                                    padding: const EdgeInsets.all(8),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(5),
+                                      child: Image.asset(
+                                        'images/menu-placeholder.jpg',
+                                        height: 120,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    )),
+                                Expanded(
+                                  child: const ListTile(
+                                    leading: Icon(Icons.album),
+                                    title: Text('Es Susu Kopi'),
+                                    subtitle: Text('Susu kopi eenak sekali.'),
+                                  ),
+                                ),
+                                Padding(
+                                    padding: const EdgeInsets.only(bottom: 10))
+                              ],
+                            ),
+                          ),
+                        ),
+                      )
+                      .toList(),
+                ),
               ],
             ),
-            CarouselSlider(
-              options: CarouselOptions(
-                autoPlay: false,
-                aspectRatio: 1.6,
-                enlargeCenterPage: true,
-              ),
-              items: imgList
-                  .map(
-                    (item) => Container(
-                      margin: EdgeInsets.all(5.0),
-                      child: Card(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            Container(
-                                width: size.width,
-                                padding: const EdgeInsets.all(8),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(5),
-                                  child: Image.asset(
-                                    'images/menu-placeholder.jpg',
-                                    height: 120,
-                                    fit: BoxFit.cover,
-                                  ),
-                                )),
-                            const ListTile(
-                              leading: Icon(Icons.album),
-                              title: Text('Es Susu Kopi'),
-                              subtitle: Text('Susu kopi eenak sekali.'),
-                            ),
-                            Padding(padding: const EdgeInsets.only(bottom: 10))
-                          ],
-                        ),
-                      ),
-                    ),
-                  )
-                  .toList(),
-            ),
-          ],
-        ),
-        Column(
-          children: <Widget>[
             GridView.count(
+                physics: ScrollPhysics(),
                 shrinkWrap: true,
                 childAspectRatio: (itemWidth / itemHeight),
                 padding: const EdgeInsets.all(10),
@@ -93,12 +98,41 @@ class _DepanPageState extends State<DepanPage> {
                 crossAxisCount: 2,
                 // Generate 100 widgets that display their index in the List.
                 children: List.generate(20, (index) {
-                  return Center(
-                    child: Text("test"),
+                  return Container(
+                    child: Card(
+                      child: Column(
+                        children: [
+                          Container(
+                              width: size.width * 0.6,
+                              height: size.height * 0.20,
+                              padding: const EdgeInsets.all(8),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(5),
+                                child: Image.asset(
+                                  'images/menu-placeholder.jpg',
+                                  height: 120,
+                                  fit: BoxFit.cover,
+                                ),
+                              )),
+                          ListTile(
+                            title: const Text('Card title 1'),
+                            subtitle: Text(
+                              'Secondary Text',
+                              style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6)),
+                            ),
+                          ),
+                          ButtonBar(
+                            alignment: MainAxisAlignment.start,
+                            children: [],
+                          ),
+                        ],
+                      ),
+                    ),
                   );
                 })),
           ],
-        ),
+        ))
       ],
     ));
   }
