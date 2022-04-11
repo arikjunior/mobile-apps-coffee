@@ -32,26 +32,35 @@ class _BerandaState extends State<Beranda> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.person),
+          leading: Icon(
+            Icons.person,
+            color: Palette.black,
+          ),
           centerTitle: true,
           title: new Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text('Menu'),
+              Text(
+                'Menu',
+                style: TextStyle(color: Palette.black),
+              ),
             ],
           ),
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.search),
+              color: Palette.black,
               onPressed: () {},
             ),
             IconButton(
               icon: const Icon(Icons.message_rounded),
               onPressed: () {},
+              color: Palette.black,
             ),
             IconButton(
               icon: const Icon(Icons.shopping_cart_checkout),
               onPressed: () {},
+              color: Palette.black,
             ),
           ],
           // leading: new Row(children: <Widget>[
@@ -73,7 +82,8 @@ class _BerandaState extends State<Beranda> with SingleTickerProviderStateMixin {
           //       filled: true),
           // ),
 
-          backgroundColor: Palette.bg1,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
 
           bottom: TabBar(
             controller: _tabController,
