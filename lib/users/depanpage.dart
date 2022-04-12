@@ -61,6 +61,7 @@ class _DepanPageState extends State<DepanPage> {
                               children: <Widget>[
                                 Container(
                                     width: size.width,
+                                    height: size.height * 0.15,
                                     padding: const EdgeInsets.all(8),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(5),
@@ -88,6 +89,13 @@ class _DepanPageState extends State<DepanPage> {
                 ),
               ],
             ),
+            Container(
+              margin: const EdgeInsets.only(top: 5),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Text("Our Menus"),
+              ),
+            ),
             GridView.count(
                 physics: ScrollPhysics(),
                 shrinkWrap: true,
@@ -114,18 +122,23 @@ class _DepanPageState extends State<DepanPage> {
                                   fit: BoxFit.cover,
                                 ),
                               )),
-                          ListTile(
-                            title: const Text('Card title 1'),
-                            subtitle: Text(
-                              'Secondary Text',
-                              style: TextStyle(
-                                  color: Colors.black.withOpacity(0.6)),
-                            ),
-                          ),
-                          ButtonBar(
-                            alignment: MainAxisAlignment.start,
-                            children: [],
-                          ),
+                          Expanded(
+                              child: Column(
+                            children: [
+                              ListTile(
+                                title: const Text('Card title 1'),
+                                subtitle: Text(
+                                  'Secondary Text',
+                                  style: TextStyle(
+                                      color: Colors.black.withOpacity(0.6)),
+                                ),
+                              ),
+                              ButtonBar(
+                                alignment: MainAxisAlignment.start,
+                                children: [],
+                              ),
+                            ],
+                          ))
                         ],
                       ),
                     ),

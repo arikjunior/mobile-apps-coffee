@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../constans.dart';
+import 'package:clippy_flutter/clippy_flutter.dart';
+import 'package:clippy_flutter/arc.dart';
+import 'package:clippy_flutter/ticket.dart';
+import 'package:clippy_flutter/chevron.dart';
+import 'package:clippy_flutter/diagonal.dart';
 
 class FavoritePage extends StatefulWidget {
   @override
@@ -55,38 +60,55 @@ class _FavoritePageState extends State<FavoritePage> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 20,
-                ),
-                Icon(
-                  Icons.confirmation_number,
-                  color: Colors.grey[800],
-                  size: 30,
-                )
+                // SizedBox(
+                //   width: 20,
+                // ),
+                // Icon(
+                //   Icons.confirmation_number,
+                //   color: Colors.grey[800],
+                //   size: 30,
+                // )
               ],
             ),
           ),
           Expanded(
               child: ListView(
             children: List.generate(10, (index) {
-              return Card(
-                child: Container(
-                    child: Row(
-                  children: [
-                    ListTile(
-                      title: const Text('Card title 1'),
-                      subtitle: Text(
-                        'Secondary Text',
-                        style: TextStyle(color: Colors.black.withOpacity(0.6)),
+              return Container(
+                child: Ticket(
+                  radius: 20.0,
+                  child: Container(
+                    width: double.infinity,
+                    height: 100.0,
+                    child: Card(
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: ListTile(
+                              title: const Text('Card title 1'),
+                              subtitle: Text(
+                                'Secondary Text',
+                                style: TextStyle(
+                                    color: Colors.black.withOpacity(0.6)),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: ButtonBar(
+                              alignment: MainAxisAlignment.start,
+                              children: [],
+                            ),
+                          ),
+                          Expanded(
+                              child: Icon(
+                            Icons.confirmation_number,
+                            color: Palette.black,
+                          )),
+                        ],
                       ),
                     ),
-                    ButtonBar(
-                      alignment: MainAxisAlignment.start,
-                      children: [],
-                    ),
-                    Icon(Icons.confirmation_number)
-                  ],
-                )),
+                  ),
+                ),
               );
             }),
           ))
