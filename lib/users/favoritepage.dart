@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import '../constans.dart';
 import 'package:clippy_flutter/clippy_flutter.dart';
@@ -73,44 +74,505 @@ class _FavoritePageState extends State<FavoritePage> {
           ),
           Expanded(
               child: ListView(
-            children: List.generate(10, (index) {
-              return Container(
+            children: [
+              Container(
                 child: Ticket(
                   radius: 20.0,
                   child: Container(
                     width: double.infinity,
                     height: 100.0,
                     child: Card(
+                      color: Colors.green.withOpacity(0.3),
+                      shape: Border.all(width: 2.0, color: Colors.brown),
                       child: Row(
                         children: [
                           Expanded(
                             child: ListTile(
-                              title: const Text('Card title 1'),
-                              subtitle: Text(
-                                'Secondary Text',
-                                style: TextStyle(
-                                    color: Colors.black.withOpacity(0.6)),
-                              ),
+                              title: Container(
+                                  // alignment: Alignment.centerLeft,
+                                  margin: const EdgeInsets.only(top: 29),
+                                  child: Column(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Text('Diskon 60% ',
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold)),
+                                          SizedBox(height: 16),
+                                          Row(
+                                            children: [
+                                              Icon(
+                                                Icons.access_time_rounded,
+                                                color: Colors.black,
+                                                size: 13,
+                                              ),
+                                              Text(
+                                                ' Berakhir dalam',
+                                                style: TextStyle(
+                                                    fontSize: 10,
+                                                    color: Colors.black
+                                                        .withOpacity(0.6)),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  )),
                             ),
                           ),
                           Expanded(
-                            child: ButtonBar(
-                              alignment: MainAxisAlignment.start,
-                              children: [],
+                            child: Padding(
+                              child: Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Column(
+                                    children: [
+                                      Icon(
+                                        Icons.confirmation_number,
+                                        color: Colors.black,
+                                      ),
+                                      Text('Gunakan ',
+                                          style: TextStyle(fontSize: 12))
+                                    ],
+                                  )),
+                              padding:
+                                  const EdgeInsets.only(top: 30, right: 30),
                             ),
                           ),
-                          Expanded(
-                              child: Icon(
-                            Icons.confirmation_number,
-                            color: Palette.black,
-                          )),
                         ],
                       ),
                     ),
                   ),
                 ),
-              );
-            }),
+              ),
+              Container(
+                child: Ticket(
+                  radius: 20.0,
+                  child: Container(
+                    width: double.infinity,
+                    height: 100.0,
+                    child: Card(
+                      color: Colors.green.withOpacity(0.3),
+                      shape: Border.all(width: 2.0, color: Colors.brown),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: ListTile(
+                              title: Container(
+                                  // alignment: Alignment.centerLeft,
+                                  margin: const EdgeInsets.only(top: 29),
+                                  child: Column(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Text('Diskon 40% ',
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold)),
+                                          SizedBox(height: 16),
+                                          Row(
+                                            children: [
+                                              Icon(
+                                                Icons.access_time_rounded,
+                                                color: Palette.black,
+                                                size: 13,
+                                              ),
+                                              Text(
+                                                ' Berakhir dalam',
+                                                style: TextStyle(
+                                                    fontSize: 10,
+                                                    color: Colors.black
+                                                        .withOpacity(0.6)),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  )),
+                            ),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              child: Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Column(
+                                    children: [
+                                      Icon(
+                                        Icons.confirmation_number,
+                                        color: Colors.black,
+                                      ),
+                                      Text('Gunakan ',
+                                          style: TextStyle(fontSize: 12))
+                                    ],
+                                  )),
+                              padding:
+                                  const EdgeInsets.only(top: 30, right: 30),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                child: Ticket(
+                  radius: 20.0,
+                  child: Container(
+                    width: double.infinity,
+                    height: 100.0,
+                    child: Card(
+                      color: Colors.green.withOpacity(0.3),
+                      shape: Border.all(width: 2.0, color: Colors.brown),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: ListTile(
+                              title: Container(
+                                  // alignment: Alignment.centerLeft,
+                                  margin: const EdgeInsets.only(top: 29),
+                                  child: Column(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Text('Diskon 40% ',
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold)),
+                                          SizedBox(height: 16),
+                                          Row(
+                                            children: [
+                                              Icon(
+                                                Icons.access_time_rounded,
+                                                color: Palette.black,
+                                                size: 13,
+                                              ),
+                                              Text(
+                                                ' Berakhir dalam',
+                                                style: TextStyle(
+                                                    fontSize: 10,
+                                                    color: Colors.black
+                                                        .withOpacity(0.6)),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  )),
+                            ),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              child: Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Column(
+                                    children: [
+                                      Icon(
+                                        Icons.confirmation_number,
+                                        color: Colors.black,
+                                      ),
+                                      Text('Gunakan ',
+                                          style: TextStyle(fontSize: 12))
+                                    ],
+                                  )),
+                              padding:
+                                  const EdgeInsets.only(top: 30, right: 30),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                child: Ticket(
+                  radius: 20.0,
+                  child: Container(
+                    width: double.infinity,
+                    height: 100.0,
+                    child: Card(
+                      color: Colors.green.withOpacity(0.3),
+                      shape: Border.all(width: 2.0, color: Colors.brown),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: ListTile(
+                              title: Container(
+                                  // alignment: Alignment.centerLeft,
+                                  margin: const EdgeInsets.only(top: 29),
+                                  child: Column(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Text('Diskon 40% ',
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold)),
+                                          SizedBox(height: 16),
+                                          Row(
+                                            children: [
+                                              Icon(
+                                                Icons.access_time_rounded,
+                                                color: Palette.black,
+                                                size: 13,
+                                              ),
+                                              Text(
+                                                ' Berakhir dalam',
+                                                style: TextStyle(
+                                                    fontSize: 10,
+                                                    color: Colors.black
+                                                        .withOpacity(0.6)),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  )),
+                            ),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              child: Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Column(
+                                    children: [
+                                      Icon(
+                                        Icons.confirmation_number,
+                                        color: Colors.black,
+                                      ),
+                                      Text('Gunakan ',
+                                          style: TextStyle(fontSize: 12))
+                                    ],
+                                  )),
+                              padding:
+                                  const EdgeInsets.only(top: 30, right: 30),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                child: Ticket(
+                  radius: 20.0,
+                  child: Container(
+                    width: double.infinity,
+                    height: 100.0,
+                    child: Card(
+                      color: Colors.green.withOpacity(0.3),
+                      shape: Border.all(width: 2.0, color: Colors.brown),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: ListTile(
+                              title: Container(
+                                  // alignment: Alignment.centerLeft,
+                                  margin: const EdgeInsets.only(top: 29),
+                                  child: Column(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Text('Diskon 40% ',
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold)),
+                                          SizedBox(height: 16),
+                                          Row(
+                                            children: [
+                                              Icon(
+                                                Icons.access_time_rounded,
+                                                color: Palette.black,
+                                                size: 13,
+                                              ),
+                                              Text(
+                                                ' Berakhir dalam',
+                                                style: TextStyle(
+                                                    fontSize: 10,
+                                                    color: Colors.black
+                                                        .withOpacity(0.6)),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  )),
+                            ),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              child: Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Column(
+                                    children: [
+                                      Icon(
+                                        Icons.confirmation_number,
+                                        color: Colors.black,
+                                      ),
+                                      Text('Gunakan ',
+                                          style: TextStyle(fontSize: 12))
+                                    ],
+                                  )),
+                              padding:
+                                  const EdgeInsets.only(top: 30, right: 30),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                child: Ticket(
+                  radius: 20.0,
+                  child: Container(
+                    width: double.infinity,
+                    height: 100.0,
+                    child: Card(
+                      color: Colors.green.withOpacity(0.3),
+                      shape: Border.all(width: 2.0, color: Colors.brown),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: ListTile(
+                              title: Container(
+                                  // alignment: Alignment.centerLeft,
+                                  margin: const EdgeInsets.only(top: 29),
+                                  child: Column(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Text('Diskon 40% ',
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold)),
+                                          SizedBox(height: 16),
+                                          Row(
+                                            children: [
+                                              Icon(
+                                                Icons.access_time_rounded,
+                                                color: Palette.black,
+                                                size: 13,
+                                              ),
+                                              Text(
+                                                ' Berakhir dalam',
+                                                style: TextStyle(
+                                                    fontSize: 10,
+                                                    color: Colors.black
+                                                        .withOpacity(0.6)),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  )),
+                            ),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              child: Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Column(
+                                    children: [
+                                      Icon(
+                                        Icons.confirmation_number,
+                                        color: Colors.black,
+                                      ),
+                                      Text('Gunakan ',
+                                          style: TextStyle(fontSize: 12))
+                                    ],
+                                  )),
+                              padding:
+                                  const EdgeInsets.only(top: 30, right: 30),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                child: Ticket(
+                  radius: 20.0,
+                  child: Container(
+                    width: double.infinity,
+                    height: 100.0,
+                    child: Card(
+                      color: Colors.green.withOpacity(0.3),
+                      shape: Border.all(width: 2.0, color: Colors.brown),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: ListTile(
+                              title: Container(
+                                  // alignment: Alignment.centerLeft,
+                                  margin: const EdgeInsets.only(top: 29),
+                                  child: Column(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Text('Diskon 40% ',
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold)),
+                                          SizedBox(height: 16),
+                                          Row(
+                                            children: [
+                                              Icon(
+                                                Icons.access_time_rounded,
+                                                color: Palette.black,
+                                                size: 13,
+                                              ),
+                                              Text(
+                                                ' Berakhir dalam',
+                                                style: TextStyle(
+                                                    fontSize: 10,
+                                                    color: Colors.black
+                                                        .withOpacity(0.6)),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  )),
+                            ),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              child: Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Column(
+                                    children: [
+                                      Icon(
+                                        Icons.confirmation_number,
+                                        color: Colors.black,
+                                      ),
+                                      Text('Gunakan ',
+                                          style: TextStyle(fontSize: 12))
+                                    ],
+                                  )),
+                              padding:
+                                  const EdgeInsets.only(top: 30, right: 30),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ))
         ],
       ),
