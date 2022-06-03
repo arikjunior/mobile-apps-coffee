@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:tokokopi/constans.dart';
 import 'package:tokokopi/users/landingpage.dart' as users;
+import 'package:tokokopi/auth/register.dart' as auth;
+import 'package:tokokopi/auth/login.dart' as login;
 
 class LauncherPage extends StatefulWidget {
   @override
@@ -32,9 +34,6 @@ class _LauncherPageState extends State<LauncherPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Coffee Shop'),
-      ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 20),
         height: MediaQuery.of(context).size.height,
@@ -58,10 +57,10 @@ class _LauncherPageState extends State<LauncherPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Center(
-              child: new Image.asset(
-                'images/coffee.png',
-                height: 580.0,
-                width: 600.0,
+              child: Image.asset(
+                'images/logo.png',
+                width: 200,
+                height: 50,
               ),
             ),
           ],
